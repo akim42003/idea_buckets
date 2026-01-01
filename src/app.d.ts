@@ -10,4 +10,15 @@ declare global {
 	}
 }
 
+declare module '*.sveltex' {
+	export const metadata: {
+		title: string;
+		date: string;
+		description?: string;
+	};
+
+	const component: unknown;
+	export default component;
+}
+
 export {};

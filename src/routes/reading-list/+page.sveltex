@@ -1,0 +1,19 @@
+---
+title: "Reading List"
+---
+
+<script lang="ts">
+	import { readingList } from '$lib/reading-list';
+</script>
+
+# Reading List
+
+A running log of what I have been reading, with short notes.
+
+{#each readingList as item}
+<section class="reading-entry">
+	<h2>{item.title}</h2>
+	<p class="post-meta">{item.author}</p>
+	<p>{item.thoughts}</p>
+</section>
+{/each}

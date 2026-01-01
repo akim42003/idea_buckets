@@ -1,0 +1,22 @@
+---
+title: "Notes on Math and Markdown"
+date: "2024-07-06"
+description: "Trying LaTeX with markdown for clean math notes."
+---
+
+Inline math looks good when it stays brief, like $E = mc^2$.
+
+Block math should breathe:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
+$$
+
+A quick matrix:
+
+$$
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+$$

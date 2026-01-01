@@ -1,14 +1,17 @@
 <script lang="ts">
-	import Header from "./header.svelte";
+	import Header from './header.svelte';
+	import '../style.css';
 	let { children } = $props();
 </script>
 
-<svelte:head>
-</svelte:head>
+<svelte:head></svelte:head>
 
+<Header />
 
-<Header/>
+<main>
+	{@render children()}
+</main>
 
-{@render children()}
-
-<footer> Footer </footer>
+<footer>
+	<p>Inspired by <a href="https://ashtyn.land">Ashtyn Morel Blake</a></p>
+</footer>
