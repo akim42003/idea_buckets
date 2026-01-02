@@ -7,9 +7,52 @@ export type ReadingEntry = {
 
 export const readingList: ReadingEntry[] = [
 	{
-		title: 'The Art of Doing Science and Engineering',
-		author: 'Richard W. Hamming',
-		readWhen: 'Fall-Winter 25-26',
-		thoughts: 'A bracing reminder that taste and curiosity matter as much as technique.'
-	}
+		title: '107 Days',
+		author: 'Kamala Harris',
+		readWhen: 'Fall 25',
+		thoughts: `Nice plane read. I enjoyed VP Harris's/ghost writer's voice and pacing a lot`
+	},
+	{
+		title: 'Empire of AI',
+		author: 'Karen Hao',
+		readWhen: 'Summer-Fall 25',
+		thoughts: `This was a good piece of investigative journalism. I thought Hao had a very balanced
+		take on interpreting the dynamics between Sam Altman, Elon Musk, Ilya Sutskever, Greg Brockman, etc. I especially appreciated her attention to the explotive nature of data labeling via Outlier and Scale AI initiatives as well as the deterimental environmental impacts of data center construction. She did a nice job capturing the personalities of those involved and describing the breakthrough moments that lead to the LLM race.`
+	},
+	{
+		title: 'Multi-Agent Reinforcement Learning: Foundations and Modern Approaches',
+		author: 'Stefano Albrecht, Filippos Christianos, Lukas Schafer',
+		readWhen: 'Fall 25',
+		thoughts: `As a novice to both game theory and deep RL, I found this book approachable with well written algorithmic intuition and examples to follow. I liked the pseudocode examples a lot and feel confident in my elementary understanding of equillibrium and how game-systems work`
+	},
+	{
+		title: 'The Secret Life of Programs: Understad Computers -- Craft Better Code',
+		author: 'Jon Steinhart',
+		readWhen: 'Summer 25',
+		thoughts: `The scope of this book was vast. It starts with elementary electrical chemistry and physics and extends into machine learning while visiting computer architecture, compilers and PLs, web development and the DOM among other topics. It gives a decent intuition of how these things work which was fun to read.`
+	},
+	{
+		title: 'Steve Jobs',
+		author: 'Walter Isaacson',
+		readWhen: 'Summer 25',
+		thoughts: 'Isaacson is a great writer. Steve was crazy which made this a fun biography'
+	},
+	{
+		title: 'Avatar: The Last Airbender and Philsophy: Wisdom from Aang to Zuko',
+		author: 'John De Smedt, Helen De Cruz, Aaron Ehasz',
+		readWhen: 'Winter 25',
+		thoughts: `This was a nice, diverse collection of essays ranging from eastern and indigenous philosphy to economic imperialism and environmental racism. I liked how it was structured from nation to nation which made the book more coherent despite the discontinuity of authors`
+	},
+	{
+		title: 'Elon Musk',
+		author: 'Walter Isaacson',
+		readWhen: 'Winter 25',
+		thoughts: `Yeah he's crazy`
+	},
+	{
+		title: 'Why Machines Learn: The Elegant Math Behind Modern AI',
+		author: 'Anil Anathaswamy',
+		readWhen: 'Fall-Winter 24-25',
+		thoughts: `This was sort of my first front-to-back book about machine learning and I thought it was relatively rigorous while staying narrative and engaging. I'm glad this first book got me on the train of reading and self-studying more specific material`
+	},
 ];

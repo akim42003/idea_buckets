@@ -1,12 +1,14 @@
 ---
 title: "Notes on Math and Markdown"
-date: "2024-07-06"
+date: "2025-01-01"
 description: "Trying LaTeX with markdown for clean math notes."
 ---
 
 Inline math looks good when it stays brief, like $E = mc^2$.
 
-Block math should breathe:
+Block math should be given proper space as I was taught in undergrad.
+---
+E.g.
 
 $$
 \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}

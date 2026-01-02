@@ -5,11 +5,11 @@
 	};
 </script>
 
-<h1 class="home-title">Things I write and read</h1>
+<h1 class="home-title">A collection of things I write and read across various topics</h1>
 
 <section class="home-columns">
 	<div class="home-posts">
-		<h2>Blog</h2>
+		<h2>Writing</h2>
 		<ul class="post-list">
 			{#each data.posts as post}
 				<li>
