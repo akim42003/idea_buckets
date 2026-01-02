@@ -1,13 +1,13 @@
 ---
 title: "Notes on Math and Markdown"
-date: "2025-01-01"
+date: "2026-01-01"
 description: "Trying LaTeX with markdown for clean math notes."
 ---
 
 Inline math looks good when it stays brief, like $E = mc^2$.
 
 Block math should be given proper space as I was taught in undergrad.
----
+
 E.g.
 
 $$
