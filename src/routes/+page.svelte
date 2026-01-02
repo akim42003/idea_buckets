@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let data: {
 		posts: { title: string; date: string; slug: string }[];
-		readingList: { title: string; author: string; thoughts: string }[];
+		readingList: { title: string; author: string; readWhen: string; thoughts: string }[];
 	};
 </script>
 
@@ -32,7 +32,7 @@
 				</li>
 			{/each}
 		</ul>
-		{#if data.readingList.length > 10}
+		{#if data.readingList.length > 0}
 			<a class="reading-more" href="/reading-list">Show more</a>
 		{/if}
 	</aside>

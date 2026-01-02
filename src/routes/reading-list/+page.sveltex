@@ -9,11 +9,14 @@ title: "Reading List"
 # Reading List
 
 A running log of what I have been reading, with short notes.
+Also, here's my <a href = "https://docs.google.com/spreadsheets/d/1Qy9S4HZoVSKceGux_itzR4y33xLlxXyKCvzcYXrClSo/edit?usp=sharing">
+Google Sheet of paper summaries</a>. I try to add one summary a day.
 
 {#each readingList as item}
 <section class="reading-entry">
 	<h2>{item.title}</h2>
-	<p class="post-meta">{item.author}</p>
+	<p class="post-meta">Author: {item.author}</p>
+	<p class="post-meta">Read: {item.readWhen}</p>
 	<p>{item.thoughts}</p>
 </section>
 {/each}

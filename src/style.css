@@ -36,6 +36,7 @@ header {
 	justify-content: flex-start;
 	gap: 1rem;
 	position: fixed;
+	align-items: center;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -57,6 +58,7 @@ footer {
 	background: transparent;
 	color: var(--muted);
 	font-size: 1rem;
+	font-style: italic;
 	z-index: 10;
 	min-height: var(--footer-h);
 }
@@ -97,6 +99,11 @@ header ul {
 	flex-wrap: wrap;
 }
 
+header a {
+	background-image: none;
+	font-style: italic;
+}
+
 .home-title {
 	text-align: center;
 	margin-bottom: 2.5rem;
@@ -123,6 +130,15 @@ header ul {
 	gap: 0.9rem;
 }
 
+.post-list a,
+.reading-more {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+	text-decoration-color: currentColor;
+	background-image: none;
+}
+
 .post-date {
 	display: block;
 	color: var(--muted);
@@ -143,12 +159,24 @@ header ul {
 
 .reading-more {
 	display: inline-block;
-	margin-top: 1rem;
+	margin-top: 0.35rem;
 	font-size: 0.95rem;
 }
 
 .reading-entry {
 	margin: 0 0 2rem;
+}
+
+.reading-entry h2 {
+	margin-bottom: 0.6rem;
+}
+
+.reading-entry .post-meta {
+	margin: 0 0 0.2rem;
+}
+
+.reading-entry .post-meta:last-of-type {
+	margin-bottom: 0.7rem;
 }
 
 .home-center {
