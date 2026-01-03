@@ -195,12 +195,39 @@ main ol {
 }
 
 @media (max-width: 900px) {
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		overflow: hidden;
+	}
+
+	main {
+		height: calc(100vh - var(--header-h) - var(--footer-h));
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	header {
+		background: var(--bg);
+	}
+
 	.home-columns {
 		grid-template-columns: 1fr;
 	}
 
 	.home-center {
 		display: none;
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	footer {
+		background: var(--bg);
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
 	}
 }
 

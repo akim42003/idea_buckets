@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<link rel="stylesheet" href={`${base}/sveltex/mathjax@3.2.2.chtml.min.css`} />
+	<link rel="icon" href={`${base}/favicon.svg`} />
 </svelte:head>
 
 <Header />
