@@ -1,5 +1,9 @@
 import { error } from '@sveltejs/kit';
-import { postBySlug } from '$lib/posts';
+import { postBySlug, posts } from '$lib/posts';
+
+export const entries = () => {
+	return posts.map((post) => ({ slug: post.slug }));
+};
 
 export const load = ({ params }) => {
 	const post = postBySlug(params.slug);

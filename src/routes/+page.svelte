@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	export let data: {
 		posts: { title: string; date: string; slug: string }[];
 		readingList: { title: string; author: string; readWhen: string; thoughts: string }[];
@@ -13,7 +15,7 @@
 		<ul class="post-list">
 			{#each data.posts as post}
 				<li>
-					<a href={`/posts/${post.slug}`}>{post.title}</a>
+					<a href={base + '/posts/' + post.slug}>{post.title}</a>
 					<span class="post-date">{post.date}</span>
 				</li>
 			{/each}
@@ -33,7 +35,7 @@
 			{/each}
 		</ul>
 		{#if data.readingList.length > 0}
-			<a class="reading-more" href="/reading-list">Show more</a>
+			<a class="reading-more" href={base + '/reading-list'}>Show more</a>
 		{/if}
 	</aside>
 </section>

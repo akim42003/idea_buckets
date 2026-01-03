@@ -2,10 +2,10 @@ import adapter from '@sveltejs/adapter-static';
 import { sveltex } from '@nvl/sveltex';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/idea_buckets' : '';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://svelte.dev/docs/kit/integrations
-	// for more information about preprocessors
 	extensions: ['.svelte', '.sveltex'],
 	preprocess: [
 		vitePreprocess(),
@@ -14,15 +14,24 @@ const config = {
 				markdownBackend: 'markdown-it',
 				mathBackend: 'mathjax'
 			},
-			{}
+			{
+				math: {
+					css: {
+						type: 'cdn', // Use CDN instead of local files
+						cdn: 'jsdelivr'
+					}
+				}
+			}
 		)
 	],
-
 	kit: {
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter(),
+		paths: {
+			base: basePath
+		},
+		prerender: {
+			entries: ['*']
+		}
 	}
 };
 
