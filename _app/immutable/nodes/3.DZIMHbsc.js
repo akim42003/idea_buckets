@@ -1,1 +1,0 @@
-import{f as a,a as i}from"../chunks/DfYOcUpL.js";import"../chunks/C5NqEZEW.js";var n=a("<p>About this blog; I made a similar situation for my own internal thoughts but it became difficult to maintain due to some bad programming decisions and also I want to write about different things in different places</p>");function m(t){var o=n();i(t,o)}export{m as component};
