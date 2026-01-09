@@ -5,26 +5,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../_app/immutable/assets/0.D2P-mPfq.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.CF_qRhSN.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DI0fuNqN.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/gYfsknW5.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.eLAcIzqe.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/mSIfCuIu.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BbBc5ElJ.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/BUApaBEI.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C7IoeHJO.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cq8zM8gA.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.DX_djlJY.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CMCQs8va.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C7KGA84w.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/ubz1Y2YR.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CUXxAkoG.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BmfvJsG0.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CiUHXjSq.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.B-fzSvOH.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DhCbiuj4.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CMntdO6A.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BbVGT5Nm.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.Bt_ARZ08.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BHF5QnfL.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C18k9pWm.js"><!--12qhfyh--><link rel="stylesheet" href="../sveltex/mathjax@3.2.2.chtml.min.css"/> <link rel="icon" href="../favicon.svg"/><!----><!--14u6r3i--><!----><!--24boe1--><meta name="description" content="Writing down the differences between latent space and embedding space"/> <link rel="stylesheet" href="/sveltex/mathjax@3.2.2.chtml.min.css"/><!----><title>Distinguishing Latent Space, and Embedding Space</title>
+		<link rel="modulepreload" href="../_app/immutable/chunks/DoO4wsAu.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DFyUlrgq.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.CTnKOjJM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BHRlf28F.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CGeqqQ3t.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/B1BfWlio.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CY-LDH5Q.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BuUk2v80.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BEyHG4xP.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.DXHN-PB2.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/tX3mY8AF.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/ClXkEsop.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Bfp-JVv0.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.B8BV07Ny.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CFOJYXDY.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DmHlp7hP.js"><!--12qhfyh--><link rel="stylesheet" href="../sveltex/mathjax@3.2.2.chtml.min.css"/> <link rel="icon" href="../favicon.svg"/><!----><!--14u6r3i--><!----><!--24boe1--><meta name="description" content="Writing down the differences between latent space and embedding space"/> <link rel="stylesheet" href="/sveltex/mathjax@3.2.2.chtml.min.css"/><!----><title>Distinguishing Latent Space, and Embedding Space</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><header><a href="../">Blog Home</a> <nav><ul><li><a href="../about">About Blog</a></li> <li><a target="_blank" rel="noopener noreferrer" href="https://alexmkim.io?skip=true">Landing Page</a></li></ul></nav></header><!----> <main><!----><article class="post"><h1>Distinguishing Latent Space, and Embedding Space</h1> <p class="post-meta">2026-01-08</p> <!----><h2>Introduction</h2> <p>For a while I've had trouble really understanding the difference between latent space,
@@ -33,7 +33,7 @@ I'll try to elucidate the differences and similarities primarily in the context 
 			
 			<script>
 				{
-					__sveltekit_vlioya = {
+					__sveltekit_ii6hg2 = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						assets: "/idea_buckets"
 					};
@@ -41,8 +41,8 @@ I'll try to elucidate the differences and similarities primarily in the context 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.CF_qRhSN.js"),
-						import("../_app/immutable/entry/app.DX_djlJY.js")
+						import("../_app/immutable/entry/start.eLAcIzqe.js"),
+						import("../_app/immutable/entry/app.CTnKOjJM.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
