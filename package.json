@@ -2,7 +2,7 @@
 	"name": "idea-land",
 	"private": true,
 	"version": "0.0.1",
-	"homepage": "http://akim42003.github.io/idea_buckets/",
+	"homepage": "https://blog.alexmkim.io",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",

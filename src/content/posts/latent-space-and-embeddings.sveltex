@@ -1,0 +1,31 @@
+---
+title: "Distinguishing Latent Space, and Embedding Space"
+date: "2026-01-08"
+description: "Writing down the differences between latent space and embedding space"
+---
+
+## Introduction
+
+For a while I've had trouble really understanding the difference between latent space,
+embedding space, their elements and contexts in which to write and discuss about them. Today,
+I'll try to elucidate the differences and similarities primarily in the context of autoregressive transformer models.
+
+## Primer
+
+The common example used when defining latent space is the Variational Autoencoder (VAE). VAE’s are generative models that aim to create new data from the variations of what it is trained on. While most autoencoders learn a discrete representation of latent variables, the VAE learns a continuous probabilistic latent space, hence its favorability as an example in latent space discussions. The VAE architecture also implies the reality of its latent space as a low dimensional internal representation space meaning that (mathematically) it has some structure about the latent variables. A latent space is not necessarily algebraic as we will see later, but understanding it is crucial since every hidden model has a latent space from VAE, to Hidden Markov Chains, to autoregressive LLMs as we will see next.
+
+Let’s take a step back and talk about Transformer based language models and in particular the nature of embeddings. If we look at the architecture of a Transformer, we see the encoder and before that the embedding layer. This layer is a learnable mapping that takes the discrete token sequence and projects it into a high-dimensional Euclidean vector space $$\mathbb{R}^{d}$$. This vector space is the embedding space and for now that’s all we need. In other words, it is the coordinate system in which embeddings contain semantic meaning as learned by the embedding layer.
+
+## Discussion of Spaces
+
+Now that we have our embeddings as high-dimensional vectors in the embedding space, they are passed through the encoder and transformed in the process. This transformation captures whole-input semantic meaning that is then used in the decoder layers to provide context to further inputs of past output embeddings. More importantly, this transformation does not change the structure and size of the vectors such that it may no longer qualify as an element of the embedding space, rather it changes its semantic meaning entirely.
+
+Going back to the definition of latent spaces from before, let’s describe its elements as latent vectors or vectors that contain hidden representation and satisfy inclusion in the latent space. This is where the previous definition of the latent space becomes important. Since our embedding vectors have now transformed but still retain hidden representation, they are now latent vectors. Well, that’s not exactly right. They have always been latent vectors of the embedding space! That’s the big takeaway. What the encoder does is transform the embedding vectors into different latent vectors in the encoder and decoder latent space which allows for the self-attended autoregression to occur.
+
+## In Short
+
+The latent space is the more general internal representation space that only depends on what the model needs to learn the data.
+
+The embedding space is an initial latent space that serves as a semantic coordinate system for the embedding vectors. It is also often a vector space.
+
+All models that learn hidden representations have a latent space but these can vary widely from vector spaces to manifolds to probabilistic spaces or whatever the model and its internal operations need.

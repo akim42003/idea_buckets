@@ -7,10 +7,28 @@ export type ReadingEntry = {
 
 export const readingList: ReadingEntry[] = [
 	{
+		title: "Sofie's World",
+		author: 'Jostein Gaarder',
+		readWhen: 'Winter 26',
+		thoughts: `Reading... I like it so far!`
+	},
+	{
+		title: 'Zen Mind, Beginners Mind',
+		author: 'Shunryu Suzuki',
+		readWhen: 'Winter 26',
+		thoughts: `I liked this a lot more than "The Way of Zen". It was somewhat more instructional while remaining grounded in experience. I actually think both books are significant and complement each other nicely.`
+	},
+	{
 		title: '107 Days',
 		author: 'Kamala Harris',
 		readWhen: 'Fall 25',
 		thoughts: `Nice plane read. I enjoyed VP Harris's/ghost writer's voice and pacing a lot`
+	},
+	{
+		title: 'The Way of Zen',
+		author: 'Alan Watts',
+		readWhen: 'Fall 25',
+		thoughts: `Alan Watts is known for bringing Zen to the west more or less. He is upfront about not writing to teach Zen but does a nice job contextualizing the practice in both spirituality and history.`
 	},
 	{
 		title: 'Empire of AI',
@@ -44,6 +62,25 @@ export const readingList: ReadingEntry[] = [
 		thoughts: `This was a nice, diverse collection of essays ranging from eastern and indigenous philosphy to economic imperialism and environmental racism. I liked how it was structured from nation to nation which made the book more coherent despite the discontinuity of authors`
 	},
 	{
+		title: 'Meditations',
+		author: 'Marcus Aurelius',
+		readWhen: 'Winter 25',
+		thoughts: `Classic Stoicism. I get the hype but maybe I'm more into eastern stuff`
+	},
+	{
+		title: 'All or Nothing',
+		author: 'Michael Wolff',
+		readWhen: 'Spring 25',
+		thoughts: 'Yeah all Trump books are basically the same and just make me kinda sad...'
+	},
+	{
+		title: 'Behave',
+		author: 'Robert Sapolsky',
+		readWhen: 'Spring 25',
+		thoughts:
+			'For not being a textbook, I thought Sapolsky did a nice job walking me through the human brain with good primers on chemistry and biology to get me through what I forgot from highschool.'
+	},
+	{
 		title: 'Elon Musk',
 		author: 'Walter Isaacson',
 		readWhen: 'Winter 25',
@@ -55,4 +92,16 @@ export const readingList: ReadingEntry[] = [
 		readWhen: 'Fall-Winter 24-25',
 		thoughts: `This was sort of my first front-to-back book about machine learning and I thought it was relatively rigorous while staying narrative and engaging. I'm glad this first book got me on the train of reading and self-studying more specific material`
 	},
+	{
+		title: 'Ready Player One',
+		author: 'Ernest Cline',
+		readWhen: 'Fall 24',
+		thoughts: `A middle school classic. I always love reading this one.`
+	},
+	{
+		title: 'Determined',
+		author: 'Robert M. Sapolsky',
+		readWhen: 'Winter 24',
+		thoughts: `An interesting take on determinism from a neuroscience perspective. I'm not an expert but it seems scientifically grounded and thought provoking!`
+	}
 ];
