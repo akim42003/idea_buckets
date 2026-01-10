@@ -17,5 +17,6 @@
 </main>
 
 <footer>
-	<p>Inspired by <a href="https://ashtyn.land">Ashtyn Morel-Blake</a>. Written by Alexander Kim</p>
+	<p>Written by Alexander Kim</p>
+	<p>Inspired by <a href="https://ashtyn.land">Ashtyn Morel-Blake</a></p>
 </footer>

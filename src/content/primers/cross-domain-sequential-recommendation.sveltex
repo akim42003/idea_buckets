@@ -1,0 +1,27 @@
+---
+title: "Cross-Domain Sequential Recommendation"
+description: "Quick overview of how modern CDSR models work"
+---
+These days CDSR models are Transformer based and use cross-attention to handle heterogeneous
+behavioral sequences. Recall that in general there are domain specific encoders for each
+sequence domain which output domain specific embeddings to the cross-attention module. They are
+then processed into the target sequence and subsequently used to make predictions.
+
+During training, loss is definined in the target domain and propagated backward through the
+cross-attention module. In this sense, we can think of cross-attention training as the alignment
+across domains since it takes multiple domains, and learns relevant relationships between them
+to output a single semantically relevant sequence for prediction.
+
+At a high level, here's an architecture example:
+
+<pre>
+Domain A Sequence ──> Encoder A ──
+                                  │
+Domain B Sequence ──> Encoder B ──┼──> Cross-Attention ─>Target Sequence ─> Prediction Head
+                                  │
+Domain C Sequence ──> Encoder C ──
+</pre>
+
+In CDSR, cross-attention does not merge sequences into a joint timeline.
+Instead, it conditions the target-domain sequence on auxiliary-domain behavior,
+and alignment emerges because only information that improves target-domain prediction is reinforced during training

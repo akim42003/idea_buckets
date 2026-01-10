@@ -61,6 +61,15 @@ footer {
 	font-style: italic;
 	z-index: 10;
 	min-height: var(--footer-h);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+footer p {
+	margin: 0;
 }
 
 h1,
@@ -111,18 +120,20 @@ header a {
 
 .home-columns {
 	display: grid;
-	grid-template-columns: 1fr minmax(6rem, 10rem) 1fr;
+	grid-template-columns: 1fr minmax(4rem, 8rem) 1fr minmax(4rem, 8rem) 1fr;
 	gap: 2rem;
 	align-items: start;
 }
 
 .home-posts,
-.home-reading {
+.home-reading,
+.home-primers {
 	text-align: left;
 }
 
 .post-list,
-.reading-list {
+.reading-list,
+.primer-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -131,7 +142,7 @@ header a {
 }
 
 .post-list a,
-.reading-more {
+.primer-title {
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.18em;
@@ -150,6 +161,10 @@ header a {
 	display: block;
 }
 
+.primer-title {
+	display: block;
+}
+
 .reading-author {
 	display: block;
 	color: var(--muted);
@@ -157,10 +172,16 @@ header a {
 	margin-top: 0.15rem;
 }
 
-.reading-more {
+.reading-more,
+.primer-more,
+.post-more {
 	display: inline-block;
 	margin-top: 0.35rem;
 	font-size: 0.95rem;
+	font-style: italic;
+	text-decoration: none;
+	background-image: none;
+	padding-bottom: 0;
 }
 
 .reading-entry {
@@ -177,6 +198,25 @@ header a {
 
 .reading-entry .post-meta:last-of-type {
 	margin-bottom: 0.7rem;
+}
+
+.primer-matrix {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-auto-rows: auto;
+	gap: 1.5rem;
+}
+
+.primer-tile {
+	margin: 0;
+}
+
+.primer-tile p {
+	margin: 0.35rem 0 0;
+}
+
+.primer-tile h2 {
+	font-size: 1.1rem;
 }
 
 .home-center {
@@ -220,6 +260,10 @@ main ol {
 
 	.home-center {
 		display: none;
+	}
+
+	.primer-matrix {
+		grid-template-columns: 1fr;
 	}
 }
 

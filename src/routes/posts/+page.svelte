@@ -8,9 +8,9 @@
 
 <h1>Posts</h1>
 
-<section>
+<section class="primer-matrix" aria-label="Post list">
 	{#each data.posts as post}
-		<article>
+		<article class="primer-tile">
 			<h2>
 				<a href={base + '/posts/' + post.slug}>{post.title}</a>
 			</h2>
