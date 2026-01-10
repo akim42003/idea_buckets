@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../_app/immutable/assets/0.k7bHDKE2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.D6mpJENX.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Doku99vq.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/iVpnHah-.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BUApaBEI.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DVVfYhuG.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DGmsvw-d.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.C4FsUasM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BxO1O2zD.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/NpXMEJIl.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/0wPVctwF.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BgcvmISd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Cw7fCfWn.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/mnBjj1tM.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.DWYnEdhu.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Df7h8xnJ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CPdfjKS0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_9sQC3Eu.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/7.CCmrNW7C.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CBbuBPfZ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Cq6PbjQX.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/B_DUWQI_.js"><!--12qhfyh--><link rel="stylesheet" href="../sveltex/mathjax@3.2.2.chtml.min.css"/> <link rel="icon" href="../favicon.svg"/><!----><!--wl0yb5--><!----><!--1fnjdkh--><meta name="description" content="Quick overview of how modern CDSR models work"/><!----><title>Cross-Domain Sequential Recommendation</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header><a href="../">Blog Home</a> <nav><ul><li><a href="../about">About Blog</a></li> <li><a target="_blank" rel="noopener noreferrer" href="https://alexmkim.io?skip=true">Landing Page</a></li></ul></nav></header><!----> <main><!----><article class="post"><h1>Cross-Domain Sequential Recommendation</h1> <!--[--><p class="post-meta">Quick overview of how modern CDSR models work</p><!--]--> <!----><p>These days CDSR models are Transformer based and use cross-attention to handle heterogeneous
+behavioral sequences. Recall that in general there are domain specific encoders for each
+sequence domain which output domain specific embeddings to the cross-attention module. They are
+then processed into the target sequence and subsequently used to make predictions.</p> <p>During training, loss is definined in the target domain and propagated backward through the
+cross-attention module. In this sense, we can think of cross-attention training as the alignment
+across domains since it takes multiple domains, and learns relevant relationships between them
+to output a single semantically relevant sequence for prediction.</p> <p>At a high level, here's an architecture example:</p> <pre>
+Domain A Sequence ──> Encoder A ──
+                                  │
+Domain B Sequence ──> Encoder B ──┼──> Cross-Attention ─>Target Sequence ─> Prediction Head
+                                  │
+Domain C Sequence ──> Encoder C ──
+</pre> <p>In CDSR, cross-attention does not merge sequences into a joint timeline.
+Instead, it conditions the target-domain sequence on auxiliary-domain behavior,
+and alignment emerges because only information that improves target-domain prediction is reinforced during training</p><!----></article><!----><!----></main> <footer><p>Inspired by <a href="https://ashtyn.land">Ashtyn Morel-Blake</a>. Written by Alexander Kim</p></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_thsxkm = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						assets: "/idea_buckets"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.D6mpJENX.js"),
+						import("../_app/immutable/entry/app.C4FsUasM.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 7],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
