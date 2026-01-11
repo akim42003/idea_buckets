@@ -184,17 +184,6 @@ description: "Formula-first lookup tables for rapid recall"
 
 ---
 
-## Optimization Conditions
-
-| Condition | Formula |
-|---------|--------|
-| Stationary | \( \nabla f(x^*)=0 \) |
-| Local min | \( H(x^*)\succ0 \) |
-| Local max | \( H(x^*)\prec0 \) |
-| Convexity | \( f(\lambda x+(1-\lambda)y)\le\lambda f(x)+(1-\lambda)f(y) \) |
-
----
-
 # 4. Series & Convergence
 
 ## Definitions
