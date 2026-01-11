@@ -1,254 +1,259 @@
 ---
-title: "Proof Writing for ML-Focused Mathematics"
-description: "Proof patterns, logical structure, and reasoning tools"
+title: "Proof Writing Playbook"
+description: "Generalizable proof patterns with worked examples"
 ---
 
-# 1. Logical Structure of Mathematical Claims
+This document is a **procedural guide to proof writing**.
+It focuses on *reusable argument structures*, not domain-specific tricks.
 
-## Quantifier Forms (Critical)
-
-| Form | Meaning | Common Pitfall |
-|---|---|---|
-| \( \forall x\,P(x) \) | Holds for all inputs | Forgetting arbitrariness |
-| \( \exists x\,P(x) \) | At least one witness | Not constructing witness |
-| \( \forall x\exists y \) | Choice depends on \(x\) | Treating as uniform |
-| \( \exists y\forall x \) | Single global choice | Illegally letting \(y\) vary |
+For each major pattern:
+- the logical structure is stated,
+- the components are identified,
+- and a complete example proof is given.
 
 ---
 
-## Negation Rules
+# 1. Quantifiers & Logical Form (Foundation of All Proofs)
 
-| Statement | Correct Negation |
+## Core Quantifier Patterns
+
+| Form | Meaning |
+|---|---|
+| \( \forall x\,P(x) \) | Claim holds for every element |
+| \( \exists x\,P(x) \) | There exists at least one witness |
+| \( \forall x\exists y \) | Choice of \(y\) depends on \(x\) |
+| \( \exists y\forall x \) | One global choice works for all |
+
+---
+
+### Example: Correct Handling of Nested Quantifiers
+
+**Claim**
+For every real number \(x\), there exists a real number \(y\) such that \(y > x\).
+
+**Proof**
+Let \(x \in \mathbb{R}\) be arbitrary.
+Choose \(y = x + 1\).
+Then \(y > x\).
+Since \(x\) was arbitrary, the claim holds for all \(x\).
+
+**Key components**
+- arbitrary choice of \(x\),
+- explicit construction of \(y(x)\),
+- conclusion restated universally.
+
+---
+
+## Negation Rules (Used to Construct Counterexamples)
+
+| Statement | Negation |
 |---|---|
 | \( \forall x\,P(x) \) | \( \exists x:\neg P(x) \) |
 | \( \exists x\,P(x) \) | \( \forall x:\neg P(x) \) |
-| \( P\Rightarrow Q \) | \( P\land\neg Q \) |
-
-**ML relevance:** bounds, guarantees, and convergence statements often fail due to incorrect negation.
+| \( P \Rightarrow Q \) | \( P \land \neg Q \) |
 
 ---
 
-# 2. Types of Proofs You Actually Use
+### Example: Negating a Universal Bound
 
-## Direct Proof
+**Claim**
+For all vectors \(x\), \( \|Ax\| \le \|x\| \).
 
-| Template |
-|---|
-| Assume hypotheses |
-| Apply definitions + known results |
-| Derive conclusion |
+**Negation**
+There exists a vector \(x\) such that \( \|Ax\| > \|x\| \).
 
-**Used for:** convexity, PSD arguments, norm inequalities.
+This negated form is exactly what a counterexample must satisfy.
 
 ---
 
-## Proof by Contrapositive
+# 2. Direct Proof (Most Common Pattern)
 
-| Form |
-|---|
-| Prove \( \neg Q \Rightarrow \neg P \) instead of \( P\Rightarrow Q \) |
+## Template
 
-**Used for:** uniqueness, identifiability, rank arguments.
-
----
-
-## Proof by Contradiction
-
-| Form |
-|---|
-| Assume negation of claim |
-| Derive impossibility |
-
-**Used for:** non-existence, impossibility results, lower bounds.
+1. State assumptions
+2. Apply definitions
+3. Apply known results
+4. Derive conclusion
 
 ---
 
-# 3. Equality, Inequality, and Bounding Arguments
+### Example: Direct Proof
 
-## Equality Proofs
+**Claim**
+If \(x > 0\) and \(y > 0\), then \(x + y > 0\).
 
-| Pattern | Use |
-|---|---|
-| Expand both sides | Algebraic identities |
-| Reduce to zero | Norms, quadratic forms |
-| Invariant argument | Basis changes, similarity |
+**Proof**
+Assume \(x > 0\) and \(y > 0\).
+Since both are positive, their sum satisfies \(x + y > 0\).
+Thus the claim holds.
 
----
-
-## Inequality Proofs (High-Frequency)
-
-| Tool | When It Appears |
-|---|---|
-| Cauchy–Schwarz | Inner products |
-| Jensen | Convex expectations |
-| Triangle inequality | Error decomposition |
-| PSD ordering | Matrix bounds |
-
-**Failure mode:** applying inequality without checking assumptions (convexity, integrability).
+**Key components**
+- assumptions restated explicitly,
+- no hidden steps,
+- conclusion follows immediately.
 
 ---
 
-# 4. Existence, Uniqueness, and Identifiability
+# 3. Proof by Contrapositive
 
-## Existence
+## Structure
 
-| Method | Typical Use |
-|---|---|
-| Explicit construction | Minimizers, estimators |
-| Compactness + continuity | Existence of optima |
-| Probabilistic existence | Random constructions |
-
----
-
-## Uniqueness
-
-| Template |
-|---|
-| Assume two solutions |
-| Show difference = 0 |
-
-**ML relevance:** uniqueness of minimizers, representations, decompositions.
+Instead of proving
+\[
+P \Rightarrow Q
+\]
+prove
+\[
+\neg Q \Rightarrow \neg P
+\]
 
 ---
 
-## Identifiability
+### Example: Contrapositive Proof
 
-| Pattern |
-|---|
-| Show distinct parameters ⇒ distinct distributions / models |
+**Claim**
+If a number \(n\) is even, then \(n^2\) is even.
 
----
+**Contrapositive**
+If \(n^2\) is odd, then \(n\) is odd.
 
-# 5. Optimization-Style Proof Patterns
+**Proof**
+Assume \(n^2\) is odd.
+Then \(n^2 = (2k+1)^2 = 2(2k^2+2k)+1\), so \(n\) is odd.
+Thus the contrapositive holds, and so does the original claim.
 
-## Stationary Point Arguments
-
-| Step |
-|---|
-| Compute gradient |
-| Set to zero |
-| Use Hessian / convexity |
-
----
-
-## Convexity Arguments
-
-| Claim | Proof Skeleton |
-|---|---|
-| Global minimum | Convex + stationary |
-| Uniqueness | Strict convexity |
-| Stability | Strong convexity |
+**Key components**
+- reformulated statement,
+- proof proceeds forward,
+- no contradiction invoked.
 
 ---
 
-## Descent Arguments
+# 4. Proof by Contradiction
 
-| Pattern |
-|---|
-| Show objective decreases |
-| Sum telescopes |
-| Bound remainder |
+## Structure
 
----
-
-# 6. Probability & Expectation Proof Mechanics
-
-## Expectation Arguments
-
-| Tool | Use |
-|---|---|
-| Linearity | Decompose sums |
-| Conditioning | Simplify dependence |
-| Total expectation | Eliminate hidden vars |
+1. Assume negation of the claim
+2. Deduce an impossibility
+3. Conclude the claim is true
 
 ---
 
-## Almost Sure / High-Probability Proofs
+### Example: Contradiction Proof
 
-| Pattern |
-|---|
-| Prove event holds outside null set |
-| Or bound failure probability |
+**Claim**
+There is no largest integer.
 
-**Failure mode:** confusing expectation bounds with probability bounds.
+**Proof**
+Assume there exists a largest integer \(M\).
+Then \(M + 1\) is an integer and \(M + 1 > M\).
+This contradicts the assumption that \(M\) is largest.
+Therefore, no largest integer exists.
 
----
-
-# 7. Asymptotic & Limit Arguments (ML Style)
-
-## Convergence Statements
-
-| Type | Meaning |
-|---|---|
-| In probability | Typical behavior |
-| Almost surely | Pathwise behavior |
-| In expectation | Average behavior |
+**Key components**
+- explicit negation,
+- contradiction is concrete,
+- conclusion follows logically.
 
 ---
 
-## Typical Proof Skeleton
+# 5. Existence Proofs
 
-| Step |
-|---|
-| Define error quantity |
-| Bound expectation or tail |
-| Let \(n\to\infty\) |
+## Constructive Existence
 
----
-
-# 8. Linear Algebra Proof Patterns (Used Everywhere)
-
-## Orthogonality Arguments
-
-| Pattern |
-|---|
-| Decompose into orthogonal components |
-| Apply Pythagoras |
-| Minimize norm via projection |
+### Pattern
+- Explicitly define an object
+- Verify it satisfies the required property
 
 ---
 
-## Spectral Arguments
+### Example: Constructive Existence
 
-| Pattern |
-|---|
-| Diagonalize (or SVD) |
-| Reduce matrix claim to scalar claim |
-| Lift back to matrix |
+**Claim**
+There exists an integer that is divisible by both 2 and 3.
 
----
-
-## Rank Arguments
-
-| Pattern |
-|---|
-| Count dimensions |
-| Use rank–nullity |
-| Derive impossibility |
+**Proof**
+Let \(n = 6\).
+Then \(6\) is divisible by both 2 and 3.
+Thus such an integer exists.
 
 ---
 
-# 9. Proof Hygiene (What Reviewers Expect)
+## Non-Constructive Existence
 
-## Structural Discipline
-
-| Rule | Why |
-|---|---|
-| State assumptions | Prevent hidden constraints |
-| Name the theorem | Justify step |
-| Separate lemmas | Reduce cognitive load |
-| Quantify explicitly | Avoid ambiguity |
-| Close the loop | State conclusion |
+### Pattern
+- Assume no such object exists
+- Derive contradiction
 
 ---
 
-## Common Failure Modes in ML Papers
+### Example: Non-Constructive Existence
 
-| Mistake | Why It Fails |
-|---|---|
-| Implicit uniformity | Breaks limits |
-| Unchecked convexity | Invalid Jensen |
-| Dimension mismatch | Silent linear algebra error |
-| Ignoring null sets | Invalid probability claim |
+**Claim**
+There exist irrational numbers \(a,b\) such that \(a^b\) is rational.
+
+**Proof**
+Consider \(a = \sqrt{2}\).
+If \(\sqrt{2}^{\sqrt{2}}\) is rational, we are done.
+Otherwise, let \(b = \sqrt{2}\). Then
+\[
+(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = 2
+\]
+which is rational.
+Thus such numbers exist.
+
+---
+
+# 6. Uniqueness Proofs
+
+## Template
+
+1. Assume two objects satisfy the property
+2. Show they are equal
+
+---
+
+### Example: Uniqueness Proof
+
+**Claim**
+There is a unique real number \(x\) such that \(x + 3 = 5\).
+
+**Proof**
+Existence: \(x = 2\) satisfies the equation.
+Uniqueness: Suppose \(x_1 + 3 = 5\) and \(x_2 + 3 = 5\).
+Then \(x_1 = 2 = x_2\).
+Thus the solution is unique.
+
+---
+
+# 7. Inequality Proofs (General Pattern)
+
+## Template
+
+1. Start from one side
+2. Apply valid inequalities
+3. Reach the bound
+
+---
+
+### Example: Inequality Proof
+
+**Claim**
+For all real numbers \(x\),
+\[
+|x| \ge 0
+\]
+
+**Proof**
+By definition,
+\[
+|x| =
+\begin{cases}
+x & x \ge 0 \\
+-x & x < 0
+\end{cases}
+\]
+In both cases, \(|x| \ge 0\).
+Thus the claim holds for all \(x\).
 
 ---
