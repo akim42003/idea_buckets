@@ -1,0 +1,266 @@
+---
+title: "Math Fundamentals — Pre-Calculus, Algebra II, Calculus"
+description: "Formula-first lookup tables for rapid recall"
+---
+
+# 1. Pre-Calculus
+
+## Functions & Transformations
+
+| Concept | Formula |
+|------|--------|
+| Function | \( f: A \to B \) |
+| Composition | \( (f\circ g)(x)=f(g(x)) \) |
+| Inverse | \( f^{-1}(f(x))=x \) |
+| Even | \( f(-x)=f(x) \) |
+| Odd | \( f(-x)=-f(x) \) |
+| Vertical shift | \( f(x)+c \) |
+| Horizontal shift | \( f(x-c) \) |
+| Vertical scale | \( af(x) \) |
+| Horizontal scale | \( f(ax) \) |
+
+---
+
+## Exponents & Radicals
+
+| Rule | Formula |
+|----|--------|
+| Product | \( a^m a^n=a^{m+n} \) |
+| Quotient | \( \frac{a^m}{a^n}=a^{m-n} \) |
+| Power of power | \( (a^m)^n=a^{mn} \) |
+| Negative exponent | \( a^{-n}=\frac1{a^n} \) |
+| Zero exponent | \( a^0=1 \) |
+| Rational exponent | \( a^{m/n}=\sqrt[n]{a^m} \) |
+| Square root | \( \sqrt{a^2}=|a| \) |
+
+---
+
+## Logarithms
+
+| Rule | Formula |
+|----|--------|
+| Definition | \( \log_a x=y \iff a^y=x \) |
+| Product | \( \log(ab)=\log a+\log b \) |
+| Quotient | \( \log(a/b)=\log a-\log b \) |
+| Power | \( \log(a^k)=k\log a \) |
+| Change of base | \( \log_a b=\frac{\log b}{\log a} \) |
+| Inverse | \( \log(a^x)=x,\ a^{\log x}=x \) |
+
+---
+
+## Trigonometry
+
+| Identity | Formula |
+|--------|--------|
+| Unit circle | \( (\cos\theta,\sin\theta) \) |
+| Pythagorean | \( \sin^2\theta+\cos^2\theta=1 \) |
+| Tangent | \( \tan\theta=\frac{\sin\theta}{\cos\theta} \) |
+| Angle sum (sin) | \( \sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta \) |
+| Angle sum (cos) | \( \cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta \) |
+| Double angle | \( \sin2\theta=2\sin\theta\cos\theta \) |
+| Euler | \( e^{i\theta}=\cos\theta+i\sin\theta \) |
+
+---
+
+# 2. Algebra II
+
+## Polynomials
+
+| Concept | Formula |
+|------|--------|
+| Degree | highest power of \(x\) |
+| Quadratic | \( ax^2+bx+c \) |
+| Cubic | \( ax^3+bx^2+cx+d \) |
+
+---
+
+## Factoring Identities
+
+| Identity | Formula |
+|--------|--------|
+| Difference of squares | \( a^2-b^2=(a-b)(a+b) \) |
+| Sum of cubes | \( a^3+b^3=(a+b)(a^2-ab+b^2) \) |
+| Difference of cubes | \( a^3-b^3=(a-b)(a^2+ab+b^2) \) |
+
+---
+
+## Quadratics
+
+| Tool | Formula |
+|----|--------|
+| Quadratic formula | \( x=\frac{-b\pm\sqrt{b^2-4ac}}{2a} \) |
+| Discriminant | \( \Delta=b^2-4ac \) |
+| Vertex | \( x=-\frac{b}{2a} \) |
+| Completing square | \( ax^2+bx+c=a(x+\frac{b}{2a})^2+(c-\frac{b^2}{4a}) \) |
+
+---
+
+## Polynomial Division
+
+| Rule | Formula |
+|----|--------|
+| Division algorithm | \( P(x)=D(x)Q(x)+R(x) \) |
+| Remainder theorem | remainder of \(P(x)/(x-c)=P(c)\) |
+| Factor theorem | \( P(c)=0 \iff (x-c)\mid P(x) \) |
+| Partial fractions | \( \frac{P(x)}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b} \) |
+
+---
+
+## Linear Systems (Intro Matrix View)
+
+| Concept | Formula |
+|------|--------|
+| Linear system | \( Ax=b \) |
+| 2×2 determinant | \( ad-bc \) |
+| 2×2 inverse | \( \frac1{\det A}\begin{pmatrix}d&-b\\-c&a\end{pmatrix} \) |
+
+---
+
+# 3. Calculus
+
+## Limits
+
+| Concept | Formula |
+|------|--------|
+| Limit | \( \lim_{x\to a}f(x)=L \) |
+| One-sided | \( \lim_{x\to a^-},\ \lim_{x\to a^+} \) |
+| ε–δ | \( |x-a|<\delta \Rightarrow |f(x)-L|<\varepsilon \) |
+
+---
+
+## Derivatives
+
+| Function | Derivative |
+|--------|------------|
+| Constant | \( 0 \) |
+| \( x^n \) | \( nx^{n-1} \) |
+| \( e^x \) | \( e^x \) |
+| \( \ln x \) | \( 1/x \) |
+| \( \sin x \) | \( \cos x \) |
+| \( \cos x \) | \( -\sin x \) |
+
+---
+
+## Differentiation Rules
+
+| Rule | Formula |
+|----|--------|
+| Definition | \( f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \) |
+| Product | \( (fg)'=f'g+fg' \) |
+| Quotient | \( (f/g)'=\frac{f'g-fg'}{g^2} \) |
+| Chain | \( \frac{d}{dx}f(g(x))=f'(g(x))g'(x) \) |
+
+---
+
+## Integrals
+
+| Concept | Formula |
+|------|--------|
+| Indefinite | \( \int f'(x)\,dx=f(x)+C \) |
+| Power rule | \( \int x^n dx=\frac{x^{n+1}}{n+1}+C \) |
+| Definite | \( \int_a^b f(x)\,dx=F(b)-F(a) \) |
+| Substitution | \( \int f(g(x))g'(x)\,dx=\int f(u)\,du \) |
+
+---
+
+## Multivariable Calculus
+
+| Concept | Formula |
+|------|--------|
+| Partial | \( \frac{\partial f}{\partial x_i} \) |
+| Gradient | \( \nabla f=[\partial f/\partial x_1,\dots,\partial f/\partial x_n]^\top \) |
+| Directional | \( D_u f=\nabla f^\top u \) |
+| Jacobian | \( J_{ij}=\frac{\partial f_i}{\partial x_j} \) |
+| Hessian | \( H_{ij}=\frac{\partial^2 f}{\partial x_i\partial x_j} \) |
+
+---
+
+## Taylor Approximation
+
+| Order | Formula |
+|----|--------|
+| First | \( f(x+h)\approx f(x)+\nabla f^\top h \) |
+| Second | \( f(x+h)\approx f(x)+\nabla f^\top h+\frac12 h^\top Hh \) |
+
+---
+
+## Optimization Conditions
+
+| Condition | Formula |
+|---------|--------|
+| Stationary | \( \nabla f(x^*)=0 \) |
+| Local min | \( H(x^*)\succ0 \) |
+| Local max | \( H(x^*)\prec0 \) |
+| Convexity | \( f(\lambda x+(1-\lambda)y)\le\lambda f(x)+(1-\lambda)f(y) \) |
+
+---
+
+# 4. Series & Convergence
+
+## Definitions
+
+| Concept | Formula |
+|------|--------|
+| Partial sum | \( S_n=\sum_{k=1}^n a_k \) |
+| Convergence | \( \lim_{n\to\infty} S_n=S \) |
+| Necessary condition | \( a_k\to0 \) |
+
+---
+
+## Standard Series
+
+| Series | Result |
+|------|--------|
+| Geometric | converges iff \( |r|<1 \) |
+| Harmonic | diverges |
+| p-series | converges iff \( p>1 \) |
+
+---
+
+## Comparison Tests
+
+| Test | Criterion |
+|----|-----------|
+| Direct | \( 0\le a_k\le b_k \), \( \sum b_k \) conv ⇒ \( \sum a_k \) conv |
+| Limit | \( \lim \frac{a_k}{b_k}=c>0 \Rightarrow \) same behavior |
+
+---
+
+## Ratio & Root Tests
+
+| Test | Criterion |
+|----|-----------|
+| Ratio | \( L=\lim\left|\frac{a_{k+1}}{a_k}\right| \) |
+| Root | \( L=\limsup\sqrt[k]{|a_k|} \) |
+| Result | \( L<1 \) conv, \( L>1 \) div |
+
+---
+
+## Integral Test
+
+| Condition | Result |
+|----|--------|
+| \( f(k)=a_k \), positive, decreasing | \( \sum a_k \) conv ⇔ \( \int f \) conv |
+
+---
+
+## Alternating Series
+
+| Concept | Condition |
+|------|-----------|
+| Alternating test | decreasing \( a_k \), \( a_k\to0 \) |
+| Absolute convergence | \( \sum|a_k| \) conv |
+| Conditional convergence | \( \sum a_k \) conv, \( \sum|a_k| \) div |
+
+---
+
+## Power & Taylor Series
+
+| Concept | Formula |
+|------|--------|
+| Power series | \( \sum a_k(x-c)^k \) |
+| Radius | \( R=\lim\left|\frac{a_k}{a_{k+1}}\right| \) |
+| Taylor | \( \sum \frac{f^{(k)}(a)}{k!}(x-a)^k \) |
+| Maclaurin | \( a=0 \) |
+
+---

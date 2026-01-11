@@ -3,7 +3,28 @@ title: "Bayesian Statistics"
 description: "Notes from Faulkenberry's Bayesian Statistics the basics"
 ---
 
-## Introduction
+These notes come from the aforementioned handbook.
 
-These notes come from the aforementioned handbook. It's mostly conceptual intuition since the
-mathematical formulation can be found online.
+## Basic basics
+
+**Definition:** Bayesian Statistics is a statistical inference system (or philosphy depending on how you look at it) that uses prior knowledge
+to predict some posterior knowledge
+* This new posterior knowledge can then be used to make predictions and serve as the next prior
+
+**Bayes Theorem:** The foundation of Bayesian statistics which states that for events A and B
+
+$$
+P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}
+$$
+or in other words, the probability of A occuring given B has occured is the fraction as stated.
+
+Applied to data, the formula is
+$$
+\pi(\theta \mid data) = \frac{\pi(\theta)p(data \mid \theta)}{p(data)}
+$$
+
+where $$\pi(\theta)$$ is the prior, $$\theta$$ is a variable for the model parameter(s), and $$p(data \mid \theta)$$ is the likelyhood function
+and subscribes the probability of observing the data given the specific model parameter(s).
+
+Lastly, $$p(data)$$ is called the marginal probability. It essentially represents the weighted average of the likelihoods of the data over all
+possible model parameters $$\theta$$. Mathematically, it is an integral **w.r.t** $$\theta$$ where the probability of the data given $$\theta$$ is multiplied by the prior at $$\theta$$.

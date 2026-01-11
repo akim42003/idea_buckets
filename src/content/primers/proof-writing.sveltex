@@ -1,0 +1,254 @@
+---
+title: "Proof Writing for ML-Focused Mathematics"
+description: "Proof patterns, logical structure, and reasoning tools"
+---
+
+# 1. Logical Structure of Mathematical Claims
+
+## Quantifier Forms (Critical)
+
+| Form | Meaning | Common Pitfall |
+|---|---|---|
+| \( \forall x\,P(x) \) | Holds for all inputs | Forgetting arbitrariness |
+| \( \exists x\,P(x) \) | At least one witness | Not constructing witness |
+| \( \forall x\exists y \) | Choice depends on \(x\) | Treating as uniform |
+| \( \exists y\forall x \) | Single global choice | Illegally letting \(y\) vary |
+
+---
+
+## Negation Rules
+
+| Statement | Correct Negation |
+|---|---|
+| \( \forall x\,P(x) \) | \( \exists x:\neg P(x) \) |
+| \( \exists x\,P(x) \) | \( \forall x:\neg P(x) \) |
+| \( P\Rightarrow Q \) | \( P\land\neg Q \) |
+
+**ML relevance:** bounds, guarantees, and convergence statements often fail due to incorrect negation.
+
+---
+
+# 2. Types of Proofs You Actually Use
+
+## Direct Proof
+
+| Template |
+|---|
+| Assume hypotheses |
+| Apply definitions + known results |
+| Derive conclusion |
+
+**Used for:** convexity, PSD arguments, norm inequalities.
+
+---
+
+## Proof by Contrapositive
+
+| Form |
+|---|
+| Prove \( \neg Q \Rightarrow \neg P \) instead of \( P\Rightarrow Q \) |
+
+**Used for:** uniqueness, identifiability, rank arguments.
+
+---
+
+## Proof by Contradiction
+
+| Form |
+|---|
+| Assume negation of claim |
+| Derive impossibility |
+
+**Used for:** non-existence, impossibility results, lower bounds.
+
+---
+
+# 3. Equality, Inequality, and Bounding Arguments
+
+## Equality Proofs
+
+| Pattern | Use |
+|---|---|
+| Expand both sides | Algebraic identities |
+| Reduce to zero | Norms, quadratic forms |
+| Invariant argument | Basis changes, similarity |
+
+---
+
+## Inequality Proofs (High-Frequency)
+
+| Tool | When It Appears |
+|---|---|
+| Cauchy–Schwarz | Inner products |
+| Jensen | Convex expectations |
+| Triangle inequality | Error decomposition |
+| PSD ordering | Matrix bounds |
+
+**Failure mode:** applying inequality without checking assumptions (convexity, integrability).
+
+---
+
+# 4. Existence, Uniqueness, and Identifiability
+
+## Existence
+
+| Method | Typical Use |
+|---|---|
+| Explicit construction | Minimizers, estimators |
+| Compactness + continuity | Existence of optima |
+| Probabilistic existence | Random constructions |
+
+---
+
+## Uniqueness
+
+| Template |
+|---|
+| Assume two solutions |
+| Show difference = 0 |
+
+**ML relevance:** uniqueness of minimizers, representations, decompositions.
+
+---
+
+## Identifiability
+
+| Pattern |
+|---|
+| Show distinct parameters ⇒ distinct distributions / models |
+
+---
+
+# 5. Optimization-Style Proof Patterns
+
+## Stationary Point Arguments
+
+| Step |
+|---|
+| Compute gradient |
+| Set to zero |
+| Use Hessian / convexity |
+
+---
+
+## Convexity Arguments
+
+| Claim | Proof Skeleton |
+|---|---|
+| Global minimum | Convex + stationary |
+| Uniqueness | Strict convexity |
+| Stability | Strong convexity |
+
+---
+
+## Descent Arguments
+
+| Pattern |
+|---|
+| Show objective decreases |
+| Sum telescopes |
+| Bound remainder |
+
+---
+
+# 6. Probability & Expectation Proof Mechanics
+
+## Expectation Arguments
+
+| Tool | Use |
+|---|---|
+| Linearity | Decompose sums |
+| Conditioning | Simplify dependence |
+| Total expectation | Eliminate hidden vars |
+
+---
+
+## Almost Sure / High-Probability Proofs
+
+| Pattern |
+|---|
+| Prove event holds outside null set |
+| Or bound failure probability |
+
+**Failure mode:** confusing expectation bounds with probability bounds.
+
+---
+
+# 7. Asymptotic & Limit Arguments (ML Style)
+
+## Convergence Statements
+
+| Type | Meaning |
+|---|---|
+| In probability | Typical behavior |
+| Almost surely | Pathwise behavior |
+| In expectation | Average behavior |
+
+---
+
+## Typical Proof Skeleton
+
+| Step |
+|---|
+| Define error quantity |
+| Bound expectation or tail |
+| Let \(n\to\infty\) |
+
+---
+
+# 8. Linear Algebra Proof Patterns (Used Everywhere)
+
+## Orthogonality Arguments
+
+| Pattern |
+|---|
+| Decompose into orthogonal components |
+| Apply Pythagoras |
+| Minimize norm via projection |
+
+---
+
+## Spectral Arguments
+
+| Pattern |
+|---|
+| Diagonalize (or SVD) |
+| Reduce matrix claim to scalar claim |
+| Lift back to matrix |
+
+---
+
+## Rank Arguments
+
+| Pattern |
+|---|
+| Count dimensions |
+| Use rank–nullity |
+| Derive impossibility |
+
+---
+
+# 9. Proof Hygiene (What Reviewers Expect)
+
+## Structural Discipline
+
+| Rule | Why |
+|---|---|
+| State assumptions | Prevent hidden constraints |
+| Name the theorem | Justify step |
+| Separate lemmas | Reduce cognitive load |
+| Quantify explicitly | Avoid ambiguity |
+| Close the loop | State conclusion |
+
+---
+
+## Common Failure Modes in ML Papers
+
+| Mistake | Why It Fails |
+|---|---|
+| Implicit uniformity | Breaks limits |
+| Unchecked convexity | Invalid Jensen |
+| Dimension mismatch | Silent linear algebra error |
+| Ignoring null sets | Invalid probability claim |
+
+---

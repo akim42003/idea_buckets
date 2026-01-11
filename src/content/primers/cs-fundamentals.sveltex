@@ -1,0 +1,129 @@
+---
+title: "General CS Fundamentals"
+description: "Mechanics-first reference for CS competence"
+---
+
+## Core Data Structures
+
+| Concept | What it is | How it works mechanically | When it matters |
+|------|------------|---------------------------|-----------------|
+| Array / Vector | Contiguous memory sequence | Address = base + index × stride; fast sequential access | Numerical data, tensors, buffers |
+| Dynamic Array | Resizable array | Grows by allocating larger block and copying | Lists, vectors, buffers |
+| Linked List | Nodes with pointers | O(1) insert/delete given node, O(n) traversal | Rare in practice; conceptual contrast |
+| Hash Map | Key → value store | Hash → bucket → resolve collisions | Vocabularies, configs, memoization |
+| Stack | LIFO structure | Push/pop at one end | Function calls, DFS |
+| Queue | FIFO structure | Enqueue back, dequeue front | Pipelines, scheduling |
+| Deque | Double-ended queue | Push/pop at both ends | Sliding windows |
+| Heap | Partial order tree | Top element accessible in O(1), insert/remove O(log n) | Priority scheduling, top-k |
+| Tree | Hierarchical structure | Parent/child pointers or indices | Parsing, indexes |
+| Graph | Nodes + edges | Adjacency list or matrix | Dependencies, workflows |
+
+---
+
+## Core Algorithms
+
+| Pattern | Core idea | Mechanical invariant | Typical use |
+|------|----------|----------------------|-------------|
+| Sorting | Order elements | Comparison-based lower bound O(n log n) | Preprocessing, ranking |
+| Binary Search | Halve search space | Predicate monotonicity | Thresholds, ranges |
+| Two Pointers | Shrink/expand window | Monotonic pointer movement | Streaming, intervals |
+| Sliding Window | Maintain constraint | Window invariant preserved | Time series |
+| BFS | Level-wise traversal | Queue ensures shortest path | Graph distances |
+| DFS | Depth-first traversal | Stack/recursion | Reachability |
+| Dynamic Programming | Cache subproblems | State + transition + base | Sequences, decoding |
+| Greedy | Local choice | Exchange argument ensures correctness | Scheduling |
+
+---
+
+## Complexity & Cost
+
+| Concept | Meaning | Why it matters |
+|------|--------|----------------|
+| Time Complexity | Growth of operations | Predict scalability |
+| Space Complexity | Peak memory usage | Prevent OOM failures |
+| Big-O | Asymptotic upper bound | Compare algorithms |
+| Amortized Cost | Average over operations | Explains resizing |
+| Quadratic Structures | O(n²) memory/time | Attention, pairwise ops |
+
+---
+
+## Memory & Representation
+
+| Concept | Mechanical meaning | Common failure |
+|------|-------------------|----------------|
+| Stack Memory | Automatic, scoped | Stack overflow |
+| Heap Memory | Dynamic allocation | Leaks, fragmentation |
+| Cache Locality | Sequential faster than random | Slow loops |
+| dtype Choice | Bits per element | Memory blowups |
+| Copy vs View | New memory vs shared | Silent mutation bugs |
+
+---
+
+## Linux Command Line
+
+| Command / Pattern | What it does | Typical use |
+|-----------------|-------------|-------------|
+| `ls`, `cd`, `pwd` | Navigate filesystem | Orientation |
+| `cat`, `less` | View file contents | Inspection |
+| `head`, `tail` | File edges | Logs |
+| `grep` | Pattern matching | Searching |
+| `|` (pipe) | Chain commands | Data flow |
+| `sort`, `uniq` | Ordering/counting | Text analysis |
+| `awk`, `sed` | Transform text | Scripting |
+| `>` / `>>` | Redirect output | Save results |
+| `chmod`, `chown` | Permissions | Access issues |
+| `ln -s` | Symbolic links | Aliasing paths |
+
+---
+
+## Git
+
+| Concept | What it means | Why it matters |
+|------|--------------|----------------|
+| Commit | Snapshot of repo | History + rollback |
+| Branch | Independent line | Parallel work |
+| Merge | Combine histories | Integration |
+| Rebase | Replay commits | Linear history |
+| Squash Merge | Collapse commits | Clean history |
+| Reflog | HEAD history | Recovery |
+| Reset | Move branch pointer | Undo mistakes |
+| Fetch vs Pull | Update refs vs merge | Control updates |
+| Detached HEAD | Commit not on branch | Temporary states |
+| Conflict | Same lines changed | Manual resolution |
+
+---
+
+## Build & Compilation
+
+| Concept | Mechanical role | Failure mode |
+|------|----------------|--------------|
+| Compilation | Source → object | Syntax, headers |
+| Linking | Objects → executable | Missing symbols |
+| Static vs Shared | Embedded vs dynamic | Runtime errors |
+| Make / CMake | Dependency tracking | Stale builds |
+
+---
+
+## Testing & Debugging
+
+| Tool | Purpose | When to use |
+|----|--------|-------------|
+| Unit Tests | Verify logic | Deterministic code |
+| Integration Tests | Verify interaction | Pipelines |
+| Assertions | Enforce invariants | Debugging |
+| Logging | Persist state | Post-mortem |
+| Linters | Static checks | Early errors |
+
+---
+
+## Networking & APIs
+
+| Concept | Meaning | Practical note |
+|------|--------|----------------|
+| HTTP Verbs | Action semantics | API correctness |
+| JSON | Data interchange | Schema drift |
+| Latency | Time to first byte | Interactive systems |
+| Bandwidth | Throughput | Large transfers |
+| Sockets | Network endpoints | Low-level comms |
+
+---

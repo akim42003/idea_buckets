@@ -48,7 +48,7 @@
 	<aside class="home-primers">
 		<h2>Primers</h2>
 		<ul class="primer-list">
-			{#each data.primers.slice(0, 6) as primer}
+			{#each data.primers.slice(0, 4) as primer}
 				<li>
 					<a class="primer-title" href={base + '/primers/' + primer.slug}>{primer.title}</a>
 				</li>

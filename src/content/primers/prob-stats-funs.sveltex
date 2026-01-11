@@ -1,0 +1,202 @@
+---
+title: "Probability & Statistical Inference Fundamentals"
+description: "Formula-first lookup tables for rapid recall"
+---
+
+# 1. Probability Foundations
+
+## Probability Spaces
+
+| Concept | Formula |
+|------|--------|
+| Sample space | \( \Omega \) |
+| Event | \( A \subseteq \Omega \) |
+| Probability measure | \( \mathbb{P}: \mathcal{F} \to [0,1] \) |
+| Normalization | \( \mathbb{P}(\Omega)=1 \) |
+| Additivity | \( A\cap B=\varnothing \Rightarrow \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B) \) |
+
+---
+
+## Conditional Probability & Independence
+
+| Concept | Formula |
+|------|--------|
+| Conditional probability | \( \mathbb{P}(A\mid B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)} \) |
+| Independence | \( \mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B) \) |
+| Conditional independence | \( A \perp B \mid C \) |
+| Bayes' rule | \( \mathbb{P}(A\mid B)=\frac{\mathbb{P}(B\mid A)\mathbb{P}(A)}{\mathbb{P}(B)} \) |
+
+---
+
+## Random Variables
+
+| Concept | Formula |
+|------|--------|
+| Random variable | \( X:\Omega\to\mathbb{R} \) |
+| Discrete PMF | \( p(x)=\mathbb{P}(X=x) \) |
+| Continuous PDF | \( f(x) \) with \( \int f(x)\,dx=1 \) |
+| CDF | \( F(x)=\mathbb{P}(X\le x) \) |
+
+---
+
+# 2. Expectation & Moments
+
+## Expectation
+
+| Concept | Formula |
+|------|--------|
+| Expectation (discrete) | \( \mathbb{E}[X]=\sum_x x\,p(x) \) |
+| Expectation (continuous) | \( \mathbb{E}[X]=\int x f(x)\,dx \) |
+| Linearity | \( \mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y] \) |
+
+---
+
+## Variance & Covariance
+
+| Concept | Formula |
+|------|--------|
+| Variance | \( \mathrm{Var}(X)=\mathbb{E}[(X-\mu)^2] \) |
+| Alternate form | \( \mathrm{Var}(X)=\mathbb{E}[X^2]-\mathbb{E}[X]^2 \) |
+| Covariance | \( \mathrm{Cov}(X,Y)=\mathbb{E}[(X-\mu_X)(Y-\mu_Y)] \) |
+| Correlation | \( \rho_{XY}=\frac{\mathrm{Cov}(X,Y)}{\sigma_X\sigma_Y} \) |
+
+---
+
+## Laws
+
+| Law | Formula |
+|----|--------|
+| Total probability | \( \mathbb{P}(A)=\sum_i \mathbb{P}(A\mid B_i)\mathbb{P}(B_i) \) |
+| Total expectation | \( \mathbb{E}[X]=\mathbb{E}[\mathbb{E}[X\mid Y]] \) |
+| Total variance | \( \mathrm{Var}(X)=\mathbb{E}[\mathrm{Var}(X\mid Y)]+\mathrm{Var}(\mathbb{E}[X\mid Y]) \) |
+
+---
+
+# 3. Common Distributions
+
+## Discrete
+
+| Distribution | PMF | Mean | Variance |
+|-------------|-----|------|----------|
+| Bernoulli | \( p^x(1-p)^{1-x} \) | \( p \) | \( p(1-p) \) |
+| Binomial | \( \binom{n}{k}p^k(1-p)^{n-k} \) | \( np \) | \( np(1-p) \) |
+| Poisson | \( \frac{\lambda^k e^{-\lambda}}{k!} \) | \( \lambda \) | \( \lambda \) |
+
+---
+
+## Continuous
+
+| Distribution | PDF | Mean | Variance |
+|-------------|-----|------|----------|
+| Uniform | \( \frac1{b-a} \) | \( \frac{a+b}{2} \) | \( \frac{(b-a)^2}{12} \) |
+| Normal | \( \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \) | \( \mu \) | \( \sigma^2 \) |
+| Exponential | \( \lambda e^{-\lambda x} \) | \( 1/\lambda \) | \( 1/\lambda^2 \) |
+
+---
+
+# 4. Inequalities & Concentration
+
+| Inequality | Statement |
+|-----------|-----------|
+| Markov | \( \mathbb{P}(X\ge a)\le \frac{\mathbb{E}[X]}{a} \) |
+| Chebyshev | \( \mathbb{P}(|X-\mu|\ge k\sigma)\le \frac{1}{k^2} \) |
+| Hoeffding | \( \mathbb{P}(|\bar{X}-\mu|\ge\epsilon)\le 2e^{-2n\epsilon^2} \) |
+
+---
+
+# 5. Sampling & Limit Theorems
+
+## Laws of Large Numbers
+
+| Type | Statement |
+|----|-----------|
+| Weak LLN | \( \bar{X}_n \xrightarrow{P} \mu \) |
+| Strong LLN | \( \bar{X}_n \xrightarrow{a.s.} \mu \) |
+
+---
+
+## Central Limit Theorem
+
+| Statement | Formula |
+|----------|--------|
+| CLT | \( \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \Rightarrow \mathcal{N}(0,1) \) |
+
+---
+
+# 6. Estimation Theory
+
+## Point Estimation
+
+| Concept | Formula |
+|------|--------|
+| Sample mean | \( \bar{X}=\frac1n\sum X_i \) |
+| Sample variance | \( s^2=\frac1{n-1}\sum (X_i-\bar{X})^2 \) |
+| Bias | \( \mathbb{E}[\hat{\theta}]-\theta \) |
+| MSE | \( \mathrm{Bias}^2+\mathrm{Var} \) |
+
+---
+
+## Likelihood & MLE
+
+| Concept | Formula |
+|------|--------|
+| Likelihood | \( L(\theta)=\prod_i p(x_i\mid\theta) \) |
+| Log-likelihood | \( \ell(\theta)=\sum_i \log p(x_i\mid\theta) \) |
+| MLE | \( \hat{\theta}=\arg\max_\theta \ell(\theta) \) |
+
+---
+
+# 7. Confidence Intervals
+
+## Mean Estimation
+
+| Case | Interval |
+|----|----------|
+| Known \( \sigma \) | \( \bar{X}\pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \) |
+| Unknown \( \sigma \) | \( \bar{X}\pm t_{\alpha/2,n-1}\frac{s}{\sqrt{n}} \) |
+
+---
+
+## Variance Estimation
+
+| Interval | Formula |
+|--------|--------|
+| Variance CI | \( \left[\frac{(n-1)s^2}{\chi^2_{1-\alpha/2}},\frac{(n-1)s^2}{\chi^2_{\alpha/2}}\right] \) |
+
+---
+
+# 8. Hypothesis Testing
+
+## General Structure
+
+| Step | Description |
+|----|-------------|
+| Null hypothesis | \( H_0 \) |
+| Alternative | \( H_1 \) |
+| Test statistic | Function of data |
+| Significance | \( \alpha \) |
+| Decision | Reject / fail to reject |
+
+---
+
+## Common Tests
+
+| Test | Statistic | Reference |
+|----|-----------|----------|
+| Z-test | \( Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} \) | \( \mathcal{N}(0,1) \) |
+| One-sample t | \( T=\frac{\bar{X}-\mu_0}{s/\sqrt{n}} \) | \( t_{n-1} \) |
+| Two-sample t | \( \frac{\bar{X}_1-\bar{X}_2}{\sqrt{s_1^2/n_1+s_2^2/n_2}} \) | Welch |
+| Chi-square | \( \sum\frac{(O-E)^2}{E} \) | \( \chi^2 \) |
+
+---
+
+## Errors & Power
+
+| Concept | Definition |
+|------|------------|
+| Type I error | Reject true \( H_0 \) |
+| Type II error | Fail to reject false \( H_0 \) |
+| Power | \( 1-\beta \) |
+| p-value | \( \mathbb{P}(\text{data as extreme}\mid H_0) \) |
+
+---
