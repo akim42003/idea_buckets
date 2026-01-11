@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../_app/immutable/assets/0.BjdOO-NF.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.CsrkTUdz.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CW7_NEUR.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/uxlmKjvO.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BUApaBEI.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/RbTXyPi6.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BcxZo3bI.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.-Vx0G1WK.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/B5gCWxvS.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Clhhf_VO.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/vXyCZIVp.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/D_bPz67g.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/D3tb3HLY.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_6vnAIgt.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.8Bfj8PB8.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DPZMpzZM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/MNuIXmfI.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DKubSo4n.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/7.B0fjWgLr.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CBbuBPfZ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BZ5CNuer.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BGMjRVEo.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/a4ipC-2a.js"><!--12qhfyh--><link rel="stylesheet" href="../sveltex/mathjax@3.2.2.chtml.min.css"/> <link rel="icon" href="../favicon.svg"/><!----><!--wl0yb5--><!----><!--11rxv1p--><meta name="description" content="Mechanics-first reference for CS competence"/><!----><title>General CS Fundamentals</title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header><a href="../">Blog Home</a> <nav><ul><li><a href="../about">About Blog</a></li> <li><a target="_blank" rel="noopener noreferrer" href="https://alexmkim.io?skip=true">Landing Page</a></li></ul></nav></header><!----> <main><!----><article class="post"><h1>General CS Fundamentals</h1> <!--[--><p class="post-meta">Mechanics-first reference for CS competence</p><!--]--> <!----><h2>Core Data Structures</h2> <table><thead><tr><th>Concept</th><th>What it is</th><th>How it works mechanically</th><th>When it matters</th></tr></thead><tbody><tr><td>Array / Vector</td><td>Contiguous memory sequence</td><td>Address = base + index × stride; fast sequential access</td><td>Numerical data, tensors, buffers</td></tr><tr><td>Dynamic Array</td><td>Resizable array</td><td>Grows by allocating larger block and copying</td><td>Lists, vectors, buffers</td></tr><tr><td>Linked List</td><td>Nodes with pointers</td><td>O(1) insert/delete given node, O(n) traversal</td><td>Rare in practice; conceptual contrast</td></tr><tr><td>Hash Map</td><td>Key → value store</td><td>Hash → bucket → resolve collisions</td><td>Vocabularies, configs, memoization</td></tr><tr><td>Stack</td><td>LIFO structure</td><td>Push/pop at one end</td><td>Function calls, DFS</td></tr><tr><td>Queue</td><td>FIFO structure</td><td>Enqueue back, dequeue front</td><td>Pipelines, scheduling</td></tr><tr><td>Deque</td><td>Double-ended queue</td><td>Push/pop at both ends</td><td>Sliding windows</td></tr><tr><td>Heap</td><td>Partial order tree</td><td>Top element accessible in O(1), insert/remove O(log n)</td><td>Priority scheduling, top-k</td></tr><tr><td>Tree</td><td>Hierarchical structure</td><td>Parent/child pointers or indices</td><td>Parsing, indexes</td></tr><tr><td>Graph</td><td>Nodes + edges</td><td>Adjacency list or matrix</td><td>Dependencies, workflows</td></tr></tbody></table> <hr/> <h2>Core Algorithms</h2> <table><thead><tr><th>Pattern</th><th>Core idea</th><th>Mechanical invariant</th><th>Typical use</th></tr></thead><tbody><tr><td>Sorting</td><td>Order elements</td><td>Comparison-based lower bound O(n log n)</td><td>Preprocessing, ranking</td></tr><tr><td>Binary Search</td><td>Halve search space</td><td>Predicate monotonicity</td><td>Thresholds, ranges</td></tr><tr><td>Two Pointers</td><td>Shrink/expand window</td><td>Monotonic pointer movement</td><td>Streaming, intervals</td></tr><tr><td>Sliding Window</td><td>Maintain constraint</td><td>Window invariant preserved</td><td>Time series</td></tr><tr><td>BFS</td><td>Level-wise traversal</td><td>Queue ensures shortest path</td><td>Graph distances</td></tr><tr><td>DFS</td><td>Depth-first traversal</td><td>Stack/recursion</td><td>Reachability</td></tr><tr><td>Dynamic Programming</td><td>Cache subproblems</td><td>State + transition + base</td><td>Sequences, decoding</td></tr><tr><td>Greedy</td><td>Local choice</td><td>Exchange argument ensures correctness</td><td>Scheduling</td></tr></tbody></table> <hr/> <h2>Complexity &amp; Cost</h2> <table><thead><tr><th>Concept</th><th>Meaning</th><th>Why it matters</th></tr></thead><tbody><tr><td>Time Complexity</td><td>Growth of operations</td><td>Predict scalability</td></tr><tr><td>Space Complexity</td><td>Peak memory usage</td><td>Prevent OOM failures</td></tr><tr><td>Big-O</td><td>Asymptotic upper bound</td><td>Compare algorithms</td></tr><tr><td>Amortized Cost</td><td>Average over operations</td><td>Explains resizing</td></tr><tr><td>Quadratic Structures</td><td>O(n²) memory/time</td><td>Attention, pairwise ops</td></tr></tbody></table> <hr/> <h2>Memory &amp; Representation</h2> <table><thead><tr><th>Concept</th><th>Mechanical meaning</th><th>Common failure</th></tr></thead><tbody><tr><td>Stack Memory</td><td>Automatic, scoped</td><td>Stack overflow</td></tr><tr><td>Heap Memory</td><td>Dynamic allocation</td><td>Leaks, fragmentation</td></tr><tr><td>Cache Locality</td><td>Sequential faster than random</td><td>Slow loops</td></tr><tr><td>dtype Choice</td><td>Bits per element</td><td>Memory blowups</td></tr><tr><td>Copy vs View</td><td>New memory vs shared</td><td>Silent mutation bugs</td></tr></tbody></table> <hr/> <h2>Linux Command Line</h2> <table><thead><tr><th>Command / Pattern</th><th>What it does</th><th>Typical use</th></tr></thead><tbody><tr><td>ls, cd, pwd</td><td>Navigate filesystem</td><td>Orientation</td></tr><tr><td>cat, less</td><td>View file contents</td><td>Inspection</td></tr><tr><td>head, tail</td><td>File edges</td><td>Logs</td></tr><tr><td>grep</td><td>Pattern matching</td><td>Searching</td></tr><tr><td>| (pipe)</td><td>Chain commands</td><td>Data flow</td></tr><tr><td>sort, uniq</td><td>Ordering/counting</td><td>Text analysis</td></tr><tr><td>awk, sed</td><td>Transform text</td><td>Scripting</td></tr><tr><td>> / >></td><td>Redirect output</td><td>Save results</td></tr><tr><td>chmod, chown</td><td>Permissions</td><td>Access issues</td></tr><tr><td>ln -s</td><td>Symbolic links</td><td>Aliasing paths</td></tr></tbody></table> <hr/> <h2>Git</h2> <table><thead><tr><th>Concept</th><th>What it means</th><th>Why it matters</th></tr></thead><tbody><tr><td>Commit</td><td>Snapshot of repo</td><td>History + rollback</td></tr><tr><td>Branch</td><td>Independent line</td><td>Parallel work</td></tr><tr><td>Merge</td><td>Combine histories</td><td>Integration</td></tr><tr><td>Rebase</td><td>Replay commits</td><td>Linear history</td></tr><tr><td>Squash Merge</td><td>Collapse commits</td><td>Clean history</td></tr><tr><td>Reflog</td><td>HEAD history</td><td>Recovery</td></tr><tr><td>Reset</td><td>Move branch pointer</td><td>Undo mistakes</td></tr><tr><td>Fetch vs Pull</td><td>Update refs vs merge</td><td>Control updates</td></tr><tr><td>Detached HEAD</td><td>Commit not on branch</td><td>Temporary states</td></tr><tr><td>Conflict</td><td>Same lines changed</td><td>Manual resolution</td></tr></tbody></table> <hr/> <h2>Build &amp; Compilation</h2> <table><thead><tr><th>Concept</th><th>Mechanical role</th><th>Failure mode</th></tr></thead><tbody><tr><td>Compilation</td><td>Source → object</td><td>Syntax, headers</td></tr><tr><td>Linking</td><td>Objects → executable</td><td>Missing symbols</td></tr><tr><td>Static vs Shared</td><td>Embedded vs dynamic</td><td>Runtime errors</td></tr><tr><td>Make / CMake</td><td>Dependency tracking</td><td>Stale builds</td></tr></tbody></table> <hr/> <h2>Testing &amp; Debugging</h2> <table><thead><tr><th>Tool</th><th>Purpose</th><th>When to use</th></tr></thead><tbody><tr><td>Unit Tests</td><td>Verify logic</td><td>Deterministic code</td></tr><tr><td>Integration Tests</td><td>Verify interaction</td><td>Pipelines</td></tr><tr><td>Assertions</td><td>Enforce invariants</td><td>Debugging</td></tr><tr><td>Logging</td><td>Persist state</td><td>Post-mortem</td></tr><tr><td>Linters</td><td>Static checks</td><td>Early errors</td></tr></tbody></table> <hr/> <h2>Networking &amp; APIs</h2> <table><thead><tr><th>Concept</th><th>Meaning</th><th>Practical note</th></tr></thead><tbody><tr><td>HTTP Verbs</td><td>Action semantics</td><td>API correctness</td></tr><tr><td>JSON</td><td>Data interchange</td><td>Schema drift</td></tr><tr><td>Latency</td><td>Time to first byte</td><td>Interactive systems</td></tr><tr><td>Bandwidth</td><td>Throughput</td><td>Large transfers</td></tr><tr><td>Sockets</td><td>Network endpoints</td><td>Low-level comms</td></tr></tbody></table> <hr/><!----></article><!----><!----></main> <footer><p>Written by Alexander Kim</p> <p>Inspired by <a href="https://ashtyn.land">Ashtyn Morel-Blake</a></p></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1x09m6s = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						assets: "/idea_buckets"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.CsrkTUdz.js"),
+						import("../_app/immutable/entry/app.-Vx0G1WK.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 7],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
