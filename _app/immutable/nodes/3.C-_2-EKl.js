@@ -1,4 +1,4 @@
-import{f as a,a as i}from"../chunks/NpXMEJIl.js";import"../chunks/_9sQC3Eu.js";import{n as e}from"../chunks/iVpnHah-.js";var n=a(`<p>About this blog; I made a similar situation for my own internal thoughts but it became difficult
+import{f as a,a as i}from"../chunks/Clhhf_VO.js";import"../chunks/DKubSo4n.js";import{n as e}from"../chunks/uxlmKjvO.js";var n=a(`<p>About this blog; I made a similar situation for my own internal thoughts but it became difficult
 	to maintain due to some bad programming decisions and also I want to write about different things
 	in different places. So far, it's my working reading list (goodreads advertises too much) and a
 	few cobbled together essays. I'm hoping to organize this better one day, and use it as a
