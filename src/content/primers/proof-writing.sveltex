@@ -4,12 +4,12 @@ description: "Generalizable proof patterns with worked examples"
 ---
 
 This document is a **procedural guide to proof writing**.
-It focuses on *reusable argument structures*, not domain-specific tricks.
+It covers the common argument structures.
 
 For each major pattern:
 - the logical structure is stated,
 - the components are identified,
-- and a complete example proof is given.
+- and a simple example proof is given.
 
 ---
 

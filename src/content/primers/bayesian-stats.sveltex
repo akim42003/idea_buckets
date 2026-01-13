@@ -23,8 +23,31 @@ $$
 \pi(\theta \mid data) = \frac{\pi(\theta)p(data \mid \theta)}{p(data)}
 $$
 
-where $$\pi(\theta)$$ is the prior, $$\theta$$ is a variable for the model parameter(s), and $$p(data \mid \theta)$$ is the likelyhood function
+where $$\pi(\theta)$$ is the prior, $$\theta$$ is a variable whose probability is captured by the prior and posterior distributions (the updating example uses $$\theta = 0.8$$ for the sake of computation, but its actually $$\theta \in [0-1]$$. As such, it is used , and $$p(data \mid \theta)$$ is the likelihood function
 and subscribes the probability of observing the data given the specific model parameter(s).
 
 Lastly, $$p(data)$$ is called the marginal probability. It essentially represents the weighted average of the likelihoods of the data over all
 possible model parameters $$\theta$$. Mathematically, it is an integral **w.r.t** $$\theta$$ where the probability of the data given $$\theta$$ is multiplied by the prior at $$\theta$$.
+
+Note: the potation switches from $$p$$ to $$\pi$$ since we are interested in the probability of the components not the distributions themselves
+
+## Mathematics of Bayesian Updating
+
+With these distributions in mind, updating the prior is basically just using Bayes' Theorem after defining the initial prior (with something like a Beta distribution). The actual update is still a PDF, but when using software like JASP, the yielded output is the expectation of posterior. 
+
+This isn't part of the book, but in general for bernoulli trials, you calculate the posterior as 
+$$
+\frac{\theta^{k}(1-\theta)^{n-k}d}{
+\int_{0}^{1} \theta^{k}(1-\theta)^{n-k}d\theta}
+$$
+with the numerator being the unnormalized posterior. It becomes normalized by dividing by the definite integral from 0 to 1.
+
+## Bayesian Hypothesis Testing
+
+Neatly, you can use Bayes' Theorem for hypothesis testing. The framework is essentially 
+1. null $$H_0: \theta = p$$
+2. alternative $$H_1: \theta \neq p$$ or more properly, $$H_1: \theta \textasciitilde Beta(\alpha, \beta)$$
+3. Get the Bayes Factor $$BF_{10}$$ by taking the ratio of marginal likelihoods where if the null is in the numerator, it tells us how many more times the null is likely than the alternative.
+
+From this, we see that posterior odds = prior odds where $$odds$$ denotes the ratio of the probabilities of the alternative and null hypotheses. 
+
