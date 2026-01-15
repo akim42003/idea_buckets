@@ -13,6 +13,14 @@ export const readingList: ReadingEntry[] = [
 		thoughts: `Reading... I like it so far!`
 	},
 	{
+		title: 'Bayesian Statistics the basics',
+		author: 'Thomas J. Faulkenberry',
+		readWhen: 'Winter 26',
+		thoughts: `The first half was good I thought. My issues with the book come from an overfocus on the software and examples which---to me---
+    give insufficient intuition to how it works. For a general audience, it's find and I feel more confident in my general navigation of
+    Bayesian statistics and statistical philosophy now. I wish the last two chapters were more focused on mathematics and less on how to use it.`
+	},
+	{
 		title: 'Zen Mind, Beginners Mind',
 		author: 'Shunryu Suzuki',
 		readWhen: 'Winter 26',

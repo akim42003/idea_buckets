@@ -33,9 +33,9 @@ Note: the potation switches from $$p$$ to $$\pi$$ since we are interested in the
 
 ## Mathematics of Bayesian Updating
 
-With these distributions in mind, updating the prior is basically just using Bayes' Theorem after defining the initial prior (with something like a Beta distribution). The actual update is still a PDF, but when using software like JASP, the yielded output is the expectation of posterior. 
+With these distributions in mind, updating the prior is basically just using Bayes' Theorem after defining the initial prior (with something like a Beta distribution). The actual update is still a PDF, but when using software like JASP, the yielded output is the expectation of posterior.
 
-This isn't part of the book, but in general for bernoulli trials, you calculate the posterior as 
+This isn't part of the book, but in general for bernoulli trials, you calculate the posterior as
 $$
 \frac{\theta^{k}(1-\theta)^{n-k}d}{
 \int_{0}^{1} \theta^{k}(1-\theta)^{n-k}d\theta}
@@ -44,10 +44,91 @@ with the numerator being the unnormalized posterior. It becomes normalized by di
 
 ## Bayesian Hypothesis Testing
 
-Neatly, you can use Bayes' Theorem for hypothesis testing. The framework is essentially 
+Neatly, you can use Bayes' Theorem for hypothesis testing. The framework is essentially
 1. null $$H_0: \theta = p$$
 2. alternative $$H_1: \theta \neq p$$ or more properly, $$H_1: \theta \textasciitilde Beta(\alpha, \beta)$$
 3. Get the Bayes Factor $$BF_{10}$$ by taking the ratio of marginal likelihoods where if the null is in the numerator, it tells us how many more times the null is likely than the alternative.
 
-From this, we see that posterior odds = prior odds where $$odds$$ denotes the ratio of the probabilities of the alternative and null hypotheses. 
+From this, we see that posterior odds = prior odds where $$odds$$ denotes the ratio of the probabilities of the alternative and null hypotheses.
 
+## Bayesian Correlation
+
+Recall the frequentest Pearson correlation coefficient $$\rho$$ where $$\rho = \mid 1 \mid$$ represents a perfect (either positive or negative) correlation.
+The neat thing is that because inference with the Pearson correlation coefficient is based on estimating $$\rho$$, we can use Bayes' Theorem substituting $$\theta$$ for $$\rho$$.
+* Note: The prior is called the *stretched beta distribution* which is a beta distribution measured from $$[-1, 1]$$.
+
+Also, we can apply the Bayesian hypothesis testing from the last section where $$H_{0}: \rho = 0$$ and $$H_{1}: \rho \neq 0$$.
+Then we can calculate the same Bayes Factor which tells us which hypothesis does a better job predicting the observed data.
+The Bayes' Factor also quantifies by what factor the better hypothesis performs compared to the other one.
+
+## Communicating Bayesian Results
+
+Basically we want to include 1. Model Definitions, 2. Model Comparison and Parameter Estimation, 3. Sensitivity Analysis.
+These are loosely described as
+1. Our hypothesis like in frequentist statistics, and the prior distribution under $$H_{1}$$.
+2. Interpretation of the Bayes Factor and/or posterior model probability.
+3. Discussion of how the choice of prior affects the overall results.
+
+## Bayesian t-test
+
+The Bayesian t-test revolves around *effect size* (also called Cohen's $$\delta$$) which is the standardized difference between two population means
+Mathematically, it is defined as
+$$
+\delta = \frac{\mu_{1} - \mu_{2}}{\sigma}
+$$
+where $$\sigma$$ is the standard deviation.
+
+The concept of "one-tailed" or "two-tailed" tests is expressed in the form of hypothesis surrounding $$\delta$$ where a two tailed test
+fixes $$H_{1}: \delta \neq 0$$ and a one tailed test fixes $$H_{1}: \delta > 0$$ or $$H_{1}: \delta < 0$$.
+
+The prior distribution is a scaled Cauchy distribution with continuous scaling parameter $$r$$. The updating algorithm uses Bayes' Theorem
+while calculating the Bayes Factor before updating. This helps determine the credibility of the prior model before update which is valuable
+in communicating your results.
+
+## Bayesian Regression
+
+Recall the frequentist for of linear regression where coefficients $$\beta$$ are estimated to predict a target $$y$$ from
+input $$X$$. This is written as
+$$
+y = X\beta + \epsilon
+$$
+where $$\epsilon$$ is the error term and generally assumed to be normally distrbuted.
+
+Predictably, we can apply Bayes Theorem by using $$\beta$$ as the parameter of interest. As a result,
+we get a posterior distribution over the coefficients. Then assuming the likelihood follows from the
+assumption that the errors are normal, we can apply Bayesian hypothesis testing where $$H_{0}: \beta_{j} = 0$$ (predictor $$j$$ has no effect) and $$H_{1}: \beta_{j} \neq 0$$.
+In this instance, the Bayes Factor tells us which hypothesis is more likely to be accurate in variable selection.
+
+**E.g. Predicting Test Scores from Study Hours**
+Suppose we want to predict test scores ($$y$$) from hours studied ($$X$$). We have data from 5 students:
+
+| Hours ($$X$$) | Score ($$y$$) |
+|---------------|---------------|
+| 1             | 50            |
+| 2             | 55            |
+| 3             | 65            |
+| 4             | 70            |
+| 5             | 80            |
+
+**Step 1: Define the prior**
+
+We set $$\pi(\beta) \sim N(0, 10^{2})$$ expressing weak prior belief that the slope is near zero but allowing for a wide range of values.
+
+**Step 2: Compute the likelihood**
+
+Using the regression model $$y = \beta_{0} + \beta_{1}X + \epsilon$$, we calculate how probable the observed data is for different values of $$\beta_{1}$$.
+
+**Step 3: Obtain the posterior**
+
+After applying Bayes' Theorem (often via MCMC sampling in software like JASP or R's `brms`), we get:
+$$
+\pi(\beta_{1} \mid data) \sim N(7.5, 1.2^{2})
+$$
+
+This tells us the posterior mean for the slope is approximately 7.5 points per hour studied, with a 95% credible interval of roughly $$[5.1, 9.9]$$.
+
+**Step 4: Hypothesis testing**
+
+We can test $$H_{0}: \beta_{1} = 0$$ vs $$H_{1}: \beta_{1} \neq 0$$. If $$BF_{10} = 15$$, this means the data are 15 times more likely under $$H_{1}$$ than $$H_{0}$$, providing strong evidence that study hours predict test scores.
+
+* Note: The credible interval not containing 0 aligns with the Bayes Factor favoring $$H_{1}$$, but these are conceptually different—the interval describes parameter uncertainty while the Bayes Factor compares model fit.
