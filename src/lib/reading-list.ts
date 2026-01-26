@@ -7,6 +7,12 @@ export type ReadingEntry = {
 
 export const readingList: ReadingEntry[] = [
 	{
+		title: "The Psychology of Money",
+		author: "Morgan Housel",
+		readWhen: "Winter 26",
+		thoughts: `I liked how this is readable in standalone chapters for the most part. It has some insightful lessons about patience, contentment, gratitude, etc. I would definitely recommend.`
+	},
+	{
 		title: "Sofie's World",
 		author: 'Jostein Gaarder',
 		readWhen: 'Winter 26',
